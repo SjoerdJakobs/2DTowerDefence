@@ -20,26 +20,25 @@ public class BulletMovement : MonoBehaviour {
     void Start()
     {
         
-        bulletVelocity = 70f;
+        bulletVelocity = 5f * Time.deltaTime;
 
         enemyLoc = GameObject.FindGameObjectWithTag("Enemy");
         thisLoc = GameObject.Find("BulletSpawner");
         thisVec = new Vector2(enemyLoc.transform.position.x, enemyLoc.transform.position.y);
         enemyVec = new Vector2(thisLoc.transform.position.x, thisLoc.transform.position.y);
     }
-    
+
     void Update()
     {
-       
-        //Vector2.MoveTowards(thisVec, enemyVec, bulletVelocity);
+        this.transform.position = Vector2.MoveTowards(thisVec, enemyVec, bulletVelocity);
     }
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Weapon")
         {
-            Debug.Log("Test");
-            this.gameObject.GetComponent<Rigidbody2D>().AddForce((enemyLoc.transform.position - transform.position) * bulletVelocity * Time.deltaTime, ForceMode2D.Impulse);
+           //
         }
     }
 }

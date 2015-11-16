@@ -19,7 +19,6 @@ public class Grid : MonoBehaviour
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateGrid();
-        //InvokeRepeating("CreateGrid", 0, .1f);
     }
     void Update()
     {
@@ -48,7 +47,6 @@ public class Grid : MonoBehaviour
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
                 bool walkable = !(Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
                 grid[x, y] = new Node(walkable, worldPoint, x, y);
-                //Physics.CheckSphere
             }
         }
     }
@@ -61,7 +59,7 @@ public class Grid : MonoBehaviour
         {
             for (int y = -1; y <= 1; y++)
             {
-                if (x == 0 && y == 0)
+                if (x == 0 && y == 0)//(x == 0 && y == 0 || Mathf.Abs(x) + Mathf.Abs(y) == 2)
                     continue;
 
                 int checkX = node.gridX + x;
@@ -92,15 +90,15 @@ public class Grid : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x,gridWorldSize.y, 0));
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 0));
 
-           if (grid != null && displayGridGizmos)
-           {
-                foreach (Node n in grid)
-                {
-                    Gizmos.color = (n.walkable) ? Color.white : Color.red;                        
-                    Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
-                }
-           }
-       }
+        if (grid != null && displayGridGizmos)
+        {
+            foreach (Node n in grid)
+            {
+                Gizmos.color = (n.walkable) ? Color.white : Color.red;
+                Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+            }
+        }
+    }
 }
