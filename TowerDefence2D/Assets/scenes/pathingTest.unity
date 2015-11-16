@@ -134,7 +134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11446956, guid: 3659cddfcab4010448eb04b554136389, type: 2}
       propertyPath: displayGridGizmos
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11446956, guid: 3659cddfcab4010448eb04b554136389, type: 2}
       propertyPath: nodeRadius

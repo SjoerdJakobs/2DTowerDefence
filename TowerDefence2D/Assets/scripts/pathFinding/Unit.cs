@@ -52,10 +52,10 @@ public class Unit : MonoBehaviour {
             {
                 reset = false;
                 targetIndex = 0;
-                if (targetIndex < path.Length)
+                /*if (targetIndex < path.Length)
                 {
                     targetIndex--;
-                }
+                }*/
                 currentWaypoint = path[targetIndex];
                 path = new Vector3[0];
             }
@@ -63,7 +63,7 @@ public class Unit : MonoBehaviour {
 				targetIndex ++;
                 if (targetIndex >= path.Length && !reset)
                 {
-                    targetIndex = 0;
+                    //targetIndex = 0;
                     path = new Vector3[0];
                     yield break;
                 }
