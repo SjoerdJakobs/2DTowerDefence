@@ -35,7 +35,7 @@ public class Unit : MonoBehaviour {
     }
     IEnumerator DynamicPath()
     {
-        float RefreshTime = 1f;
+        float RefreshTime = .5f;
         while (true)
         {
             reset = true;
@@ -52,6 +52,10 @@ public class Unit : MonoBehaviour {
             {
                 reset = false;
                 targetIndex = 0;
+                if (targetIndex < path.Length)
+                {
+                    targetIndex--;
+                }
                 currentWaypoint = path[targetIndex];
                 path = new Vector3[0];
             }
