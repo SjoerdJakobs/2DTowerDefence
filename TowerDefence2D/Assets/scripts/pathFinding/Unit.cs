@@ -52,10 +52,6 @@ public class Unit : MonoBehaviour {
             {
                 reset = false;
                 targetIndex = 0;
-                /*if (targetIndex < path.Length)
-                {
-                    targetIndex--;
-                }*/
                 currentWaypoint = path[targetIndex];
                 path = new Vector3[0];
             }

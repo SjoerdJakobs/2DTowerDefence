@@ -61,7 +61,7 @@ public class Grid : MonoBehaviour
         {
             for (int y = -1; y <= 1; y++)
             {
-                if (x == 0 && y == 0)
+                if (x == 0 && y == 0 || Mathf.Abs(x) + Mathf.Abs(y) == 2)
                     continue;
 
                 int checkX = node.gridX + x;

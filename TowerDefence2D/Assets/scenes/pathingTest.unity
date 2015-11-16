@@ -589,4 +589,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1: {fileID: 474054, guid: 3a9c95f984d2c9b45a933a974672298b, type: 2}
-  waitTime: 2
+  waitTime: 6
