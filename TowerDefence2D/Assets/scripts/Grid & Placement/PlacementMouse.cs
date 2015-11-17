@@ -3,19 +3,20 @@ using System.Collections;
 
 public class PlacementMouse : MonoBehaviour {
 
+    //Int
     [SerializeField]
     private int grid;
+    //Int
 
+    //Transforms
     [SerializeField]
     private Transform tower1;
+    //Transforms
+
+    //Vector2
     private Vector2 mousePosition;
-	// Use this for initialization
-	void Start () {
-        
-	    
-	}
+    //Vector2
 	
-	// Update is called once per frame
     void Update()
     {
         mousePosition = Input.mousePosition;

@@ -44,6 +44,7 @@ public class Unit : MonoBehaviour {
             //yield return new WaitForSeconds(RefreshTime);
         }
     }
+
 	IEnumerator FollowPath() {
 		Vector3 currentWaypoint = path[0];
 
@@ -58,7 +59,7 @@ public class Unit : MonoBehaviour {
             if (transform.position == currentWaypoint) {
                 StopCoroutine("DynamicPath");
                 StartCoroutine("DynamicPath");
-				targetIndex ++;
+				targetIndex++;
                 if (targetIndex >= path.Length && !reset)
                 {
                     targetIndex = 0;
