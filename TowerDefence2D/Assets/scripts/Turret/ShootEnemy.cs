@@ -10,14 +10,6 @@ public class ShootEnemy : MonoBehaviour {
     private GameObject bulletSpawnLoc;
     //GameObjects
 
-    //transform
-    private Transform target;
-    private Transform turret;
-    private Transform bullet;
-    [SerializeField]
-    private Transform bulletSpawn;
-    //transform
-
     //Vector2
     private Vector2 bulletSpawnVec;
     //Vector2
@@ -36,17 +28,19 @@ public class ShootEnemy : MonoBehaviour {
         }
 	}
 	
-    void OnTriggerStay2D (Collider2D other)
+    void OnTriggerEnter2D (Collider2D other)
     {
-        if (other.transform == target)
+        if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log("Test");
             StartCoroutine("ShootBullet");
+            
         }
     }
 
     void SpawnBullets()
     {
-        Instantiate(bulletObj, bulletSpawn.position, Quaternion.identity);
+        Instantiate(bulletObj, bulletSpawnVec, Quaternion.identity);
     }
 
     IEnumerator ShootBullet()

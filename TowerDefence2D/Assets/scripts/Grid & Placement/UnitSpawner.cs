@@ -14,6 +14,9 @@ public class UnitSpawner : MonoBehaviour {
     private float waitTime;
     //Floats
 
+   
+
+
     //Vector2
     private Vector2 spawnPos;
     //Vector2
@@ -29,15 +32,20 @@ public class UnitSpawner : MonoBehaviour {
         startWave.GetComponent<Button>().onClick.AddListener(InvokeEnemies);
 	}
 
+    void Update ()
+    {
+
+    }
+
     void InvokeEnemies()
     {
         spawnPos = transform.position;
         InvokeRepeating("SpawnRepeater", 0, waitTime);
     }
-	
+
 
     void SpawnRepeater()
     {
-        Instantiate(enemyToSpawn[Random.Range(0, enemyToSpawn.Length)], new Vector2(spawnPos.x, spawnPos.y), Quaternion.identity);
+       Instantiate(enemyToSpawn[Random.Range(0, enemyToSpawn.Length)], new Vector2(spawnPos.x, spawnPos.y), Quaternion.identity);
     }
 }

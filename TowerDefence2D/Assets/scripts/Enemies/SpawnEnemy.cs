@@ -10,6 +10,8 @@ public class SpawnEnemy : MonoBehaviour {
     private GameObject enemySpawnLoc;
     //GameObjects
 
+ 
+
     //Vector2
     private Vector2 enemySpawnVec;
     //Vector2
