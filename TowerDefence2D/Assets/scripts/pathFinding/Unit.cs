@@ -13,7 +13,8 @@ public class Unit : MonoBehaviour {
 
     void Start()
     {
-        StartCoroutine("DynamicPath");
+        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        //StartCoroutine("DynamicPath"); //maybe for dynamic
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -33,7 +34,7 @@ public class Unit : MonoBehaviour {
             StartCoroutine("DynamicPath");
         }
     }
-    IEnumerator DynamicPath()
+    /*IEnumerator DynamicPath()
     {
         //float RefreshTime = .5f;
         while (true)
@@ -43,24 +44,23 @@ public class Unit : MonoBehaviour {
             yield break;
             //yield return new WaitForSeconds(RefreshTime);
         }
-    }
-
+    }*///maybe for dynamic
 	IEnumerator FollowPath() {
 		Vector3 currentWaypoint = path[0];
 
 		while (true) {
-            if (reset)
+            /*if (reset)
             {
                 reset = false;
                 targetIndex = 0;
                 currentWaypoint = path[targetIndex];
                 path = new Vector3[0];
-            }
+            }*///maybe for dynamic
             if (transform.position == currentWaypoint) {
-                StopCoroutine("DynamicPath");
-                StartCoroutine("DynamicPath");
-				targetIndex++;
-                if (targetIndex >= path.Length && !reset)
+                //StopCoroutine("DynamicPath");
+                //StartCoroutine("DynamicPath");
+				targetIndex ++;
+                if (targetIndex >= path.Length /*&& !reset*/)
                 {
                     targetIndex = 0;
                     path = new Vector3[0];

@@ -1888,6 +1888,14 @@ Prefab:
       propertyPath: turret
       value: 
       objectReference: {fileID: 499190, guid: 4621f049597c137419f00dafee25b65a, type: 2}
+    - target: {fileID: 11427500, guid: b4476051390ae3347b24495bab7dfbbd, type: 2}
+      propertyPath: spawnWall
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427500, guid: b4476051390ae3347b24495bab7dfbbd, type: 2}
+      propertyPath: spawnTurret
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4476051390ae3347b24495bab7dfbbd, type: 2}
   m_IsPrefabParent: 0

@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21211850}
   - 58: {fileID: 5883326}
   - 114: {fileID: 11429898}
+  - 114: {fileID: 11414226}
   m_Layer: 0
   m_Name: enemytwo 1
   m_TagString: Enemy
@@ -43,6 +44,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .100000001
+--- !u!114 &11414226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18240e66beaf12469c7b72af196fe6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
+  bewegingsVector: {x: 0, y: 0}
 --- !u!114 &11429898
 MonoBehaviour:
   m_ObjectHideFlags: 1
