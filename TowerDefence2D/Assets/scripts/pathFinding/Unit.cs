@@ -7,12 +7,19 @@ public class Unit : MonoBehaviour {
     private Transform target;
     [SerializeField]
 	private float speed = 10;
+<<<<<<< HEAD
     //private bool reset = false;
 	Vector3[] path;
 	private int targetIndex;
 
     public event System.Action noPath;
     
+=======
+    private bool reset = false;
+	Vector3[] path;
+	private int targetIndex;
+
+>>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
     void Start()
     {
         PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
@@ -23,11 +30,15 @@ public class Unit : MonoBehaviour {
     {
         if (pathSuccessful)
         {
+<<<<<<< HEAD
             Debug.Log("path");
+=======
+>>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
             path = newPath;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
         }
+<<<<<<< HEAD
         else
         {
             if (noPath != null)
@@ -37,6 +48,8 @@ public class Unit : MonoBehaviour {
             Debug.Log("test");
             GameObject.Destroy(gameObject);
         }
+=======
+>>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
 	}
     /*void Update()
     {
@@ -46,7 +59,11 @@ public class Unit : MonoBehaviour {
             StartCoroutine("DynamicPath");
         }
     }
+<<<<<<< HEAD
     IEnumerator DynamicPath()
+=======
+    /*IEnumerator DynamicPath()
+>>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
     {
         //float RefreshTime = .5f;
         while (true)
@@ -56,8 +73,12 @@ public class Unit : MonoBehaviour {
             yield break;
             //yield return new WaitForSeconds(RefreshTime);
         }
+<<<<<<< HEAD
     }*/
     //maybe for dynamic
+=======
+    }*///maybe for dynamic
+>>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
 	IEnumerator FollowPath() {
 		Vector3 currentWaypoint = path[0];
 
