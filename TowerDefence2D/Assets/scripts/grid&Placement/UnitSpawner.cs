@@ -22,4 +22,5 @@ public class UnitSpawner : MonoBehaviour {
     {
         Instantiate(enemy1, new Vector2(spawnPos.x, spawnPos.y), Quaternion.identity);
     }
+    
 }

@@ -7,25 +7,38 @@ public class Unit : MonoBehaviour {
     private Transform target;
     [SerializeField]
 	private float speed = 10;
-    private bool reset = false;
+    //private bool reset = false;
 	Vector3[] path;
 	private int targetIndex;
 
+    public event System.Action noPath;
+    
     void Start()
     {
-        StartCoroutine("DynamicPath");
+        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        //StartCoroutine("DynamicPath"); //maybe for dynamic
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
     {
         if (pathSuccessful)
         {
+            Debug.Log("path");
             path = newPath;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
         }
+        else
+        {
+            if (noPath != null)
+            {
+                noPath();
+            }
+            Debug.Log("test");
+            GameObject.Destroy(gameObject);
+        }
 	}
-    void Update()
+    /*void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
@@ -43,23 +56,24 @@ public class Unit : MonoBehaviour {
             yield break;
             //yield return new WaitForSeconds(RefreshTime);
         }
-    }
+    }*/
+    //maybe for dynamic
 	IEnumerator FollowPath() {
 		Vector3 currentWaypoint = path[0];
 
 		while (true) {
-            if (reset)
+            /*if (reset)
             {
                 reset = false;
                 targetIndex = 0;
                 currentWaypoint = path[targetIndex];
                 path = new Vector3[0];
-            }
+            }*///maybe for dynamic
             if (transform.position == currentWaypoint) {
-                StopCoroutine("DynamicPath");
-                StartCoroutine("DynamicPath");
+                //StopCoroutine("DynamicPath");
+                //StartCoroutine("DynamicPath");
 				targetIndex ++;
-                if (targetIndex >= path.Length && !reset)
+                if (targetIndex >= path.Length /*&& !reset*/)
                 {
                     targetIndex = 0;
                     path = new Vector3[0];

@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11446956, guid: 3659cddfcab4010448eb04b554136389, type: 2}
       propertyPath: gridWorldSize.x
-      value: 47
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 11446956, guid: 3659cddfcab4010448eb04b554136389, type: 2}
       propertyPath: displayGridGizmos
@@ -524,6 +524,10 @@ Prefab:
       propertyPath: tower1
       value: 
       objectReference: {fileID: 404120, guid: f0f093419c246ff4d9b8b3ecf9e20820, type: 2}
+    - target: {fileID: 11427500, guid: b4476051390ae3347b24495bab7dfbbd, type: 2}
+      propertyPath: unwalkableMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4476051390ae3347b24495bab7dfbbd, type: 2}
   m_IsPrefabParent: 0
@@ -543,4 +547,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1: {fileID: 474054, guid: 3a9c95f984d2c9b45a933a974672298b, type: 2}
-  waitTime: 1
+  waitTime: 4
