@@ -32,6 +32,8 @@ public class PlacementMouse : MonoBehaviour {
     [SerializeField]
     private bool spawnTurret = false;
     //Bool
+
+    private CoinsController checkCoins;
 	
     void Update()
     {
@@ -39,6 +41,14 @@ public class PlacementMouse : MonoBehaviour {
         PlaceInput();
 
         gridPos = new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid);
+    }
+
+    void CanIBuild()
+    {
+       if (checkCoins._coinsValue > 0)
+       {
+           building = true;
+       }
     }
 
 
@@ -53,6 +63,7 @@ public class PlacementMouse : MonoBehaviour {
         else transform.position = new Vector2(-10000, 0);
     }
 
+
     void PlaceInput()
     {
         if (building)
@@ -63,9 +74,17 @@ public class PlacementMouse : MonoBehaviour {
                 if (Input.GetButtonDown("Fire1"))
                 {
                     if (spawnWall)
+                    {
                         Instantiate(tower1, gridPos, Quaternion.identity);
+                        checkCoins._coinsValue -= 500f;
+                    }
+                       
                     else if (spawnTurret)
+                    {
                         Instantiate(turret, gridPos, Quaternion.identity);
+                        checkCoins._coinsValue -= 500f;
+                    }
+                        
                 }
             }
         }

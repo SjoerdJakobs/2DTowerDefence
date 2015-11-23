@@ -12,10 +12,6 @@ public class ShootEnemy : MonoBehaviour {
     private GameObject closestEnemy;
     //GameObjects
 
-    //Vector2
-   private Vector2 bulletSpawnVec;
-    //Vector2
-
     //Bool
     [SerializeField]
     private bool spotEnemy = false;
@@ -29,8 +25,7 @@ public class ShootEnemy : MonoBehaviour {
 
 	void FindEnemy()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(this.gameObject.transform.position, 2f, enemyLayer);
-
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(this.gameObject.transform.position, 4f, enemyLayer);
 
         float shortestDistance = float.MaxValue;
 
@@ -50,7 +45,6 @@ public class ShootEnemy : MonoBehaviour {
                 ShootBullet();
             }
 
-        
     }
    
     void SpawnBullets()
@@ -59,11 +53,13 @@ public class ShootEnemy : MonoBehaviour {
         bulletToSpawn.GetComponent<BulletMovement>().setTarget(closestEnemy);    
     }
 
+    /*
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.gameObject.transform.position, 2f);
+        Gizmos.DrawWireSphere(this.gameObject.transform.position, 4f);
     }
+     */
 
     void ShootBullet()
     {

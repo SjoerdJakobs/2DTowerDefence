@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 435054}
   - 212: {fileID: 21246856}
   - 114: {fileID: 11466474}
+  - 114: {fileID: 11480008}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -38,6 +39,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad35e0d75c7feef4bad79d6dfc516213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11480008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3563496b6dcb44089b29e6975f9efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21246856

@@ -4,29 +4,29 @@ using System.Collections;
 public class BulletMovement : MonoBehaviour {
 
     //Floats
-    private float bulletVelocity;
+    private float _bulletVelocity;
     //Floats
 
     //GameObjects
-    private GameObject target;
+    private GameObject _bulletTarget;
     //GameObjects
 
 
     public void setTarget(GameObject obj)
     {
-        target = obj;
+        _bulletTarget = obj;
     }
 
     void Start()
     {
-        bulletVelocity = 5f * Time.deltaTime;
+        _bulletVelocity = 10f * Time.deltaTime;
     }
 
     void Update()
     {
-        if (target.gameObject != null)
+        if (_bulletTarget.gameObject != null)
         {
-            this.transform.position = Vector2.MoveTowards(transform.position, target.transform.position, bulletVelocity);
-        }   
+            this.transform.position = Vector2.MoveTowards(transform.position, _bulletTarget.transform.position, _bulletVelocity);
+        }
     }
 }

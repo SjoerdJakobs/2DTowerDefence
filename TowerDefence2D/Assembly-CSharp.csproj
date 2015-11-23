@@ -47,8 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\Camera\PixelPerfectCamera.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Enemies\SpawnEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Grid &amp; Placement\PlacementMouse.cs" />
      <Compile Include="Assets\Scripts\Grid &amp; Placement\UnitSpawner.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Grid.cs" />
@@ -57,7 +56,11 @@
      <Compile Include="Assets\Scripts\PathFinding\PathFinding.cs" />
      <Compile Include="Assets\Scripts\PathFinding\PathRequestManager.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Unit.cs" />
+     <Compile Include="Assets\Scripts\Score\CheckWave.cs" />
+     <Compile Include="Assets\Scripts\Score\CoinsController.cs" />
+     <Compile Include="Assets\Scripts\Score\TowerHealth.cs" />
      <Compile Include="Assets\Scripts\Turret\BulletMovement.cs" />
+     <Compile Include="Assets\Scripts\Turret\HitEnemy.cs" />
      <Compile Include="Assets\Scripts\Turret\ShootEnemy.cs" />
      <Compile Include="Assets\Scripts\UpgradeController.cs" />
  <Reference Include="UnityEngine.UI">
