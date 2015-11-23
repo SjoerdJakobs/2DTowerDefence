@@ -11,16 +11,9 @@ GameObject:
   - 212: {fileID: 21251956}
   - 58: {fileID: 5866696}
   - 114: {fileID: 11445860}
-<<<<<<< HEAD
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
-=======
-  - 114: {fileID: 11414074}
-  m_Layer: 0
-  m_Name: enemy
-  m_TagString: Enemy
->>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,31 +38,11 @@ CircleCollider2D:
   m_GameObject: {fileID: 136478}
   m_Enabled: 1
   m_Material: {fileID: 0}
-<<<<<<< HEAD
   m_IsTrigger: 0
-=======
-  m_IsTrigger: 1
->>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .100000001
-<<<<<<< HEAD
-=======
---- !u!114 &11414074
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18240e66beaf12469c7b72af196fe6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
-  bewegingsVector: {x: 0, y: 0}
->>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
 --- !u!114 &11445860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,11 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 442970, guid: 860105c16c6c57743a548a8d10795e5f, type: 2}
-<<<<<<< HEAD
-  speed: 5
-=======
-  speed: 10
->>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
+  speed: 1
 --- !u!212 &21251956
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -126,19 +95,7 @@ Prefab:
       objectReference: {fileID: 442970, guid: 860105c16c6c57743a548a8d10795e5f, type: 2}
     - target: {fileID: 0}
       propertyPath: speed
-<<<<<<< HEAD
-      value: 5
-=======
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 1
->>>>>>> 749407c0ee6f945bd8fe4913017220434bc57497
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
