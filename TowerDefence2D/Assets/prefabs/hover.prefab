@@ -46,6 +46,7 @@ MonoBehaviour:
   isTaken:
     serializedVersion: 2
     m_Bits: 256
+  building: 0
   spawnWall: 1
   spawnTurret: 0
 --- !u!212 &21246814
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c63b921fb58ec8f439390ae83d640d8e, type: 3}
-  m_Color: {r: .911764681, g: .368728399, b: .368728399, a: .391000003}
+  m_Color: {r: 0, g: 1, b: .213793278, a: .391000003}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -100,6 +101,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: isTaken.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: .213793278
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

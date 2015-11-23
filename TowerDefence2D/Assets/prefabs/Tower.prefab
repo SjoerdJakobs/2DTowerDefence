@@ -9,7 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 499190}
   - 212: {fileID: 21269558}
-  - 58: {fileID: 5884482}
+  - 58: {fileID: 5841604}
+  - 114: {fileID: 11479878}
   m_Layer: 8
   m_Name: Tower
   m_TagString: Untagged
@@ -51,13 +52,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.27548647, y: -6.7712636, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children:
   - {fileID: 485502}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5884482
+--- !u!58 &5841604
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -69,7 +70,6 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-<<<<<<< HEAD
   m_Radius: 1
 --- !u!114 &11479878
 MonoBehaviour:
@@ -87,9 +87,6 @@ MonoBehaviour:
     m_Bits: 512
   bulletObj: {fileID: 125086, guid: 994fa09b6a0c0ed46b0e721adb049695, type: 2}
   spotEnemy: 0
-=======
-  m_Radius: .0959890708
->>>>>>> 9823412899c55f4abf00263963093bcf01ea647d
 --- !u!212 &21269558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,17 +126,16 @@ Prefab:
       objectReference: {fileID: 11447984, guid: 994fa09b6a0c0ed46b0e721adb049695,
         type: 2}
     - target: {fileID: 0}
-<<<<<<< HEAD
       propertyPath: bulletObj
       value: 
       objectReference: {fileID: 125086, guid: 994fa09b6a0c0ed46b0e721adb049695, type: 2}
     - target: {fileID: 0}
       propertyPath: enemyLayer.m_Bits
       value: 512
-=======
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Layer
       value: 8
->>>>>>> 9823412899c55f4abf00263963093bcf01ea647d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
