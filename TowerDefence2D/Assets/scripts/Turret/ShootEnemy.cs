@@ -3,49 +3,71 @@ using System.Collections;
 
 public class ShootEnemy : MonoBehaviour {
 
+    [SerializeField]
+    private LayerMask enemyLayer;
+
     //GameObjects
     [SerializeField]
     private GameObject bulletObj;
-    private GameObject[] enemiestoFind;
-    private GameObject bulletSpawnLoc;
+    private GameObject closestEnemy;
     //GameObjects
 
     //Vector2
-    private Vector2 bulletSpawnVec;
+   private Vector2 bulletSpawnVec;
     //Vector2
+
+    //Bool
+    [SerializeField]
+    private bool spotEnemy = false;
+    //Bool
 
 	void Start () 
     {
-        enemiestoFind = GameObject.FindGameObjectsWithTag("Enemy");
-
-        bulletSpawnLoc = GameObject.Find("BulletSpawner");
-        bulletSpawnVec = new Vector2(bulletSpawnLoc.transform.position.x, bulletSpawnLoc.transform.position.y);
-
-
-        foreach (GameObject enemy in enemiestoFind)
-        {
-            
-        }
+       InvokeRepeating("FindEnemy", 0, 1.5f);
 	}
-	
-    void OnTriggerEnter2D (Collider2D other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Test");
-            StartCoroutine("ShootBullet");
-            
-        }
-    }
 
+
+	void FindEnemy()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(this.gameObject.transform.position, 2f, enemyLayer);
+
+
+        float shortestDistance = float.MaxValue;
+
+        for (int i = 0; i < hitEnemies.Length; i++)
+        {
+            float distance = Vector2.Distance(this.gameObject.transform.position, hitEnemies[i].transform.position);
+
+            if (distance < shortestDistance)
+            {
+                closestEnemy = hitEnemies[i].gameObject;
+                shortestDistance = distance;
+            }
+        }
+
+            if (closestEnemy != null)
+            {
+                ShootBullet();
+            }
+
+        
+    }
+   
     void SpawnBullets()
     {
-        Instantiate(bulletObj, bulletSpawnVec, Quaternion.identity);
+        GameObject bulletToSpawn = Instantiate(bulletObj, transform.position, transform.rotation) as GameObject;
+        bulletToSpawn.GetComponent<BulletMovement>().setTarget(closestEnemy);    
     }
 
-    IEnumerator ShootBullet()
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.gameObject.transform.position, 2f);
+    }
+
+    void ShootBullet()
     {
         SpawnBullets();
-        yield return new WaitForSeconds(2);
     }
+     
 }

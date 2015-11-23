@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 435054}
   - 212: {fileID: 21246856}
   - 114: {fileID: 11466474}
-  - 114: {fileID: 11447984}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -30,18 +29,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11447984
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807be05ddeba1d049ab086a698a78c1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 5
 --- !u!114 &11466474
 MonoBehaviour:
   m_ObjectHideFlags: 1

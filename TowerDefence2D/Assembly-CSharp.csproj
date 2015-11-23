@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\PathFinding\Unit.cs" />
      <Compile Include="Assets\Scripts\Turret\BulletMovement.cs" />
      <Compile Include="Assets\Scripts\Turret\ShootEnemy.cs" />
+     <Compile Include="Assets\Scripts\UpgradeController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
