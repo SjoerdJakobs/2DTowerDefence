@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 113844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -37,11 +37,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 113844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe39631175d6be4b8f13f9a134ee913, type: 3}
+  m_Script: {fileID: 11500000, guid: 67010eafbcf15c54cbc4051844c838bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid: 3
-  tower1: {fileID: 0}
+  tower1: {fileID: 404120, guid: f0f093419c246ff4d9b8b3ecf9e20820, type: 2}
+  turret: {fileID: 499190, guid: 4621f049597c137419f00dafee25b65a, type: 2}
+  isTaken:
+    serializedVersion: 2
+    m_Bits: 256
+  spawnWall: 1
+  spawnTurret: 0
 --- !u!212 &21246814
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -76,12 +82,24 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: 1.5
+      propertyPath: grid
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
+      propertyPath: tower1
+      value: 
+      objectReference: {fileID: 404120, guid: f0f093419c246ff4d9b8b3ecf9e20820, type: 2}
+    - target: {fileID: 0}
+      propertyPath: spawnWall
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: turret
+      value: 
+      objectReference: {fileID: 499190, guid: 4621f049597c137419f00dafee25b65a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: isTaken.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

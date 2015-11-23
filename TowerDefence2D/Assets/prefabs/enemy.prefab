@@ -11,9 +11,13 @@ GameObject:
   - 212: {fileID: 21251956}
   - 58: {fileID: 5866696}
   - 114: {fileID: 11445860}
+<<<<<<< HEAD
   m_Layer: 9
+=======
+  m_Layer: 0
+>>>>>>> 9823412899c55f4abf00263963093bcf01ea647d
   m_Name: enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 442970, guid: 860105c16c6c57743a548a8d10795e5f, type: 2}
-  speed: 10
+  speed: 1
 --- !u!212 &21251956
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,6 +101,7 @@ Prefab:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Enemy
@@ -109,6 +114,8 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+=======
+>>>>>>> 9823412899c55f4abf00263963093bcf01ea647d
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136478}

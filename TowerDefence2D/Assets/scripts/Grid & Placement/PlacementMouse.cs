@@ -16,11 +16,17 @@ public class PlacementMouse : MonoBehaviour {
     private Transform turret;
     //Transforms
 
+    [SerializeField]
+    private LayerMask isTaken;
+
     //Vector2
     private Vector2 mousePosition;
+    private Vector2 gridPos;
     //Vector2
 
     //Bool
+    public bool building;
+    private bool isFree;
     [SerializeField]
     private bool spawnWall = false;
     [SerializeField]
@@ -31,6 +37,8 @@ public class PlacementMouse : MonoBehaviour {
     {
         CheckMouse();
         PlaceInput();
+
+        gridPos = new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid);
     }
 
 
@@ -38,22 +46,29 @@ public class PlacementMouse : MonoBehaviour {
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        transform.position = new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid);
+        if (building)
+        {
+            transform.position = gridPos;
+        }
+        else transform.position = new Vector2(-10000, 0);
     }
 
     void PlaceInput()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (building)
         {
-            if (spawnWall)
-                Instantiate(tower1, new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid), Quaternion.identity);
-        }
-
-        if (Input.GetButtonDown("Fire2"))
-        {
-            if (spawnTurret)
-                Instantiate(turret, new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid), Quaternion.identity);
+            isFree = !(Physics2D.OverlapCircle(gridPos, (grid / 2), isTaken));
+            if (isFree)
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    if (spawnWall)
+                        Instantiate(tower1, gridPos, Quaternion.identity);
+                    else if (spawnTurret)
+                        Instantiate(turret, gridPos, Quaternion.identity);
+                }
+            }
         }
     }
-}//Mathf.Round(Input.mousePosition.y / grid) * grid
+}
     

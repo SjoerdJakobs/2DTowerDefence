@@ -7,9 +7,13 @@ public class Unit : MonoBehaviour {
     private Transform target;
     [SerializeField]
 	private float speed = 10;
-    private bool reset = false;
+    //private bool reset = false;
 	Vector3[] path;
 	private int targetIndex;
+
+    public event System.Action noPath;
+    
+    private bool reset = false;
 
     void Start()
     {
@@ -21,12 +25,22 @@ public class Unit : MonoBehaviour {
     {
         if (pathSuccessful)
         {
+            Debug.Log("path");
             path = newPath;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
         }
+        else
+        {
+            if (noPath != null)
+            {
+                noPath();
+            }
+            Debug.Log("test");
+            GameObject.Destroy(gameObject);
+        }
 	}
-    void Update()
+    /*void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
@@ -34,6 +48,7 @@ public class Unit : MonoBehaviour {
             StartCoroutine("DynamicPath");
         }
     }
+    IEnumerator DynamicPath()
     /*IEnumerator DynamicPath()
     {
         //float RefreshTime = .5f;
@@ -44,7 +59,8 @@ public class Unit : MonoBehaviour {
             yield break;
             //yield return new WaitForSeconds(RefreshTime);
         }
-    }*///maybe for dynamic
+    }*/
+    //maybe for dynamic
 	IEnumerator FollowPath() {
 		Vector3 currentWaypoint = path[0];
 
