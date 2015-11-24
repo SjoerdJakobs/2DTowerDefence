@@ -53,23 +53,18 @@
      <Compile Include="Assets\scripts\Grid &amp; Placement\UnitSpawner.cs" />
      <Compile Include="Assets\scripts\Turret\BulletMovement.cs" />
      <Compile Include="Assets\scripts\Turret\ShootEnemy.cs" />
+     <Compile Include="Assets\scripts\UpgradeController.cs" />
      <Compile Include="Assets\scripts\pathFinding\Grid.cs" />
      <Compile Include="Assets\scripts\pathFinding\Heap.cs" />
      <Compile Include="Assets\scripts\pathFinding\Node.cs" />
      <Compile Include="Assets\scripts\pathFinding\PathFinding.cs" />
      <Compile Include="Assets\scripts\pathFinding\PathRequestManager.cs" />
      <Compile Include="Assets\scripts\pathFinding\Unit.cs" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

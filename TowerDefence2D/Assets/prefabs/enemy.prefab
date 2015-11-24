@@ -11,9 +11,9 @@ GameObject:
   - 212: {fileID: 21251956}
   - 58: {fileID: 5866696}
   - 114: {fileID: 11445860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 442970, guid: 860105c16c6c57743a548a8d10795e5f, type: 2}
-  speed: 1
+  speed: 10
 --- !u!212 &21251956
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -96,6 +96,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

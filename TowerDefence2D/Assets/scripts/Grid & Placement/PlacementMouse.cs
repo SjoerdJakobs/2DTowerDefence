@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlacementMouse : MonoBehaviour {
 
@@ -32,16 +33,71 @@ public class PlacementMouse : MonoBehaviour {
     [SerializeField]
     private bool spawnTurret = false;
     //Bool
-	
+    //GameObjects
+    private GameObject _TurretPlacement;
+    private GameObject _WallPlacement;
+    private GameObject _StartBuilding;
+    //GameObjects
+
+
+    void Start()
+    {
+        _StartBuilding = GameObject.Find("BuildButton");
+        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeBuild);
+        _StartBuilding = GameObject.Find("WallButton");
+        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeWall);
+        _StartBuilding = GameObject.Find("TowerButton");
+        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeTower);
+    }
+
     void Update()
     {
         CheckMouse();
         PlaceInput();
 
         gridPos = new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid);
+        /*if (GUI.Button(Rect,"BuildButton"))
+        {
+
+        }*/
     }
 
-
+    void ChangeTower()
+    {
+        if (spawnTurret)
+        {
+            spawnTurret = false;
+        }
+        else
+        {
+            spawnTurret = true;
+            spawnWall = false;
+        }
+            
+    }
+    void ChangeWall()
+    {
+        if (spawnWall)
+        {
+            spawnWall = false;
+        }
+        else
+        {
+            spawnTurret = false;
+            spawnWall = true;
+        }
+    }
+    void ChangeBuild()
+    {
+        spawnTurret = false;
+        spawnWall = false;
+        if (building)
+        {
+            building = false;
+        }
+        else
+            building = true;
+    }
     void CheckMouse()
     {
         mousePosition = Input.mousePosition;

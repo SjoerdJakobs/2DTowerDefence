@@ -20,7 +20,7 @@ public class SpawnEnemy : MonoBehaviour {
     {
         enemySpawnLoc = GameObject.Find("EnemySpawner");
         enemySpawnVec = new Vector2(enemySpawnLoc.transform.position.x, enemySpawnLoc.transform.position.y);
-
+        
         InvokeRepeating("SpawnEnemies", 0f, 1.5f);
 	}
 	
