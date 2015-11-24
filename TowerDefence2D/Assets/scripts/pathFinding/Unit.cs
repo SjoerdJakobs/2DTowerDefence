@@ -6,7 +6,7 @@ public class Unit : MonoBehaviour {
     [SerializeField]
     private Transform target;
     [SerializeField]
-	private float speed = 10;
+	private float speed = 5;
     //private bool reset = false;
 	Vector3[] path;
 	private int targetIndex;

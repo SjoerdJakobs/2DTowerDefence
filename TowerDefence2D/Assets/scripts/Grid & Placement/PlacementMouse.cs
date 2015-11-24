@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlacementMouse : MonoBehaviour {
+
+    //Gameobject
+    private GameObject dropDownMenu;
+    //Gameobject
 
     //Int
     [SerializeField]
@@ -33,8 +38,15 @@ public class PlacementMouse : MonoBehaviour {
     private bool spawnTurret = false;
     //Bool
 
+
     private CoinsController checkCoins;
 	
+    void Awake()
+    {
+        dropDownMenu = GameObject.Find("Shop");
+      //  dropDownMenu.GetComponent<Dropdown>().options = 1;
+    }
+
     void Update()
     {
         CheckMouse();

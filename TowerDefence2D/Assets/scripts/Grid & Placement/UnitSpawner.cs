@@ -12,6 +12,7 @@ public class UnitSpawner : MonoBehaviour {
     //Floats
     [SerializeField]
     private float _waitTime;
+    private float _waveDuration;
     //Floats
 
     //Vector2
@@ -27,7 +28,8 @@ public class UnitSpawner : MonoBehaviour {
     {
         _startWave = GameObject.Find("WaveButton");
         _startWave.GetComponent<Button>().onClick.AddListener(InvokeEnemies);
-	}
+        _waveDuration = 10f;
+    }
 
     void Update ()
     {

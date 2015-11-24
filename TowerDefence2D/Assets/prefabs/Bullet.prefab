@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad35e0d75c7feef4bad79d6dfc516213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletVelocity: 20
 --- !u!114 &11480008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,6 +53,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3563496b6dcb44089b29e6975f9efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &21246856
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -88,6 +92,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _bulletVelocity
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -11,7 +11,8 @@ public class HitEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () 
-    { _hitEnemies = Physics2D.OverlapCircleAll(this.gameObject.transform.position, 4f, enemyLayer);
+    { 
+        _hitEnemies = Physics2D.OverlapCircleAll(this.gameObject.transform.position, 4f, enemyLayer);
 	}
 	
 	// Update is called once per frame
@@ -23,16 +24,12 @@ public class HitEnemy : MonoBehaviour {
     {
         for (int i = 0; i < _hitEnemies.Length; i++)
         {
+            
+                _enemyToHit = _hitEnemies[i].gameObject;
 
-
-            if (distance < shortestDistance)
-            {
-                closestEnemy = _hitEnemies[i].gameObject;
-                shortestDistance = distance;
-            }
         }
 
-        if (closestEnemy != null)
+        if (_enemyToHit != null)
         {
             FindEnemy();
         }
