@@ -42,7 +42,7 @@ public class PathFinding : MonoBehaviour {
                 {
                     sw.Stop();
                     pathSucces = true;
-                    //print("path found: " + sw.ElapsedMilliseconds + " ms");
+                    print("path found: " + sw.ElapsedMilliseconds + " ms");
                     break;
                 }
 

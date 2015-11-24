@@ -4,9 +4,6 @@ using UnityEngine.UI;
 
 public class PlacementMouse : MonoBehaviour {
 
-    //Gameobject
-    private GameObject dropDownMenu;
-    //Gameobject
 
     //Int
     [SerializeField]
@@ -31,41 +28,51 @@ public class PlacementMouse : MonoBehaviour {
 
     //Bool
     public bool building;
+
     private bool isFree;
     [SerializeField]
     private bool spawnWall = false;
     [SerializeField]
     private bool spawnTurret = false;
     //Bool
+
     //GameObjects
     private GameObject _TurretPlacement;
     private GameObject _WallPlacement;
     private GameObject _StartBuilding;
+    private GameObject _buildWallButton;
+    private GameObject _buildTowerButton;
+    private GameObject _dropDown;
+    private GameObject _scoreController;
     //GameObjects
+
+    //Scripts
+    private CoinsController _checkCoins;
+    //Scripts
+
+    void Awake()
+    {
+        _scoreController = GameObject.Find("ScoreController");
+        _checkCoins = _scoreController.GetComponent<CoinsController>();
+    }
 
 
     void Start()
     {
+
         _StartBuilding = GameObject.Find("BuildButton");
         _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeBuild);
-        _StartBuilding = GameObject.Find("WallButton");
-        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeWall);
-        _StartBuilding = GameObject.Find("TowerButton");
-        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeTower);
+        _buildWallButton = GameObject.Find("WallButton");
+        _buildWallButton.GetComponent<Button>().onClick.AddListener(ChangeWall);
+        _buildTowerButton = GameObject.Find("TowerButton");
+        _buildTowerButton.GetComponent<Button>().onClick.AddListener(ChangeTower);
+
+        _buildWallButton.SetActive(false);
+        _buildTowerButton.SetActive(false);
     }
 
-<<<<<<< HEAD
 
-    private CoinsController checkCoins;
-	
-    void Awake()
-    {
-        dropDownMenu = GameObject.Find("Shop");
-      //  dropDownMenu.GetComponent<Dropdown>().options = 1;
-    }
 
-=======
->>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
     void Update()
     {
         CheckMouse();
@@ -74,9 +81,9 @@ public class PlacementMouse : MonoBehaviour {
         gridPos = new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid);
         /*if (GUI.Button(Rect,"BuildButton"))
         {
-
         }*/
     }
+
 
     void ChangeTower()
     {
@@ -107,12 +114,20 @@ public class PlacementMouse : MonoBehaviour {
     {
         spawnTurret = false;
         spawnWall = false;
+
         if (building)
         {
             building = false;
         }
         else
-            building = true;
+         building = true;
+        _buildWallButton.SetActive(true);
+        _buildTowerButton.SetActive(true);
+
+        if (_checkCoins._coinsValue <= 0)
+        {
+            building = false;
+        }
     }
     void CheckMouse()
     {
@@ -135,12 +150,19 @@ public class PlacementMouse : MonoBehaviour {
                 if (Input.GetButtonDown("Fire1"))
                 {
                     if (spawnWall)
+                    {
                         Instantiate(tower1, gridPos, Quaternion.identity);
+                        _checkCoins.RemoveCoins();
+                    }
+                        
                     else if (spawnTurret)
+                    {
                         Instantiate(turret, gridPos, Quaternion.identity);
+                        _checkCoins.RemoveCoins();
+                    }
+                        
                 }
             }
         }
     }
 }
-    

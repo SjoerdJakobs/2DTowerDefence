@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 113844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67010eafbcf15c54cbc4051844c838bc, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe39631175d6be4b8f13f9a134ee913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid: 3
@@ -46,7 +46,7 @@ MonoBehaviour:
   isTaken:
     serializedVersion: 2
     m_Bits: 256
-  building: 0
+  building: 1
   spawnWall: 1
   spawnTurret: 0
 --- !u!212 &21246814
@@ -67,14 +67,16 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c63b921fb58ec8f439390ae83d640d8e, type: 3}
-  m_Color: {r: 0, g: 1, b: .213793278, a: .391000003}
+  m_Color: {r: 0, g: 1, b: .213793039, a: .391000003}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -83,36 +85,12 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: grid
-      value: 3
+      propertyPath: m_LocalScale.x
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: tower1
-      value: 
-      objectReference: {fileID: 404120, guid: f0f093419c246ff4d9b8b3ecf9e20820, type: 2}
-    - target: {fileID: 0}
-      propertyPath: spawnWall
+      propertyPath: m_LocalScale.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: turret
-      value: 
-      objectReference: {fileID: 499190, guid: 4621f049597c137419f00dafee25b65a, type: 2}
-    - target: {fileID: 0}
-      propertyPath: isTaken.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: .213793278
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
