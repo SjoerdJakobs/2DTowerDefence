@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &135740
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 407458}
-  - 212: {fileID: 21201216}
-  m_Layer: 0
-  m_Name: HealthBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &162180
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,8 +11,11 @@ GameObject:
   - 212: {fileID: 21298360}
   - 58: {fileID: 5818868}
   - 114: {fileID: 11479664}
+<<<<<<< HEAD
   - 114: {fileID: 11458140}
   - 95: {fileID: 9542072}
+=======
+>>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
   m_Layer: 9
   m_Name: enemythree 1
   m_TagString: Enemy
@@ -36,6 +23,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &407458
 Transform:
   m_ObjectHideFlags: 1
@@ -48,6 +36,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446400}
   m_RootOrder: 0
+=======
+>>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
 --- !u!4 &446400
 Transform:
   m_ObjectHideFlags: 1
@@ -55,10 +45,16 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 407458}
+=======
+  m_LocalPosition: {x: 6.91599417, y: -11.0279388, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_Children: []
+>>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!58 &5818868
@@ -74,6 +70,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .100000001
+<<<<<<< HEAD
 --- !u!95 &9542072
 Animator:
   serializedVersion: 3
@@ -103,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Enemyhealth: 100
+=======
+>>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
 --- !u!114 &11479664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 442970, guid: 860105c16c6c57743a548a8d10795e5f, type: 2}
+<<<<<<< HEAD
   speed: 7
 --- !u!212 &21201216
 SpriteRenderer:
@@ -142,6 +142,9 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c63b921fb58ec8f439390ae83d640d8e, type: 3}
   m_Color: {r: 0, g: 1, b: .00689649582, a: 1}
+=======
+  speed: 10
+>>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
 --- !u!212 &21298360
 SpriteRenderer:
   m_ObjectHideFlags: 1

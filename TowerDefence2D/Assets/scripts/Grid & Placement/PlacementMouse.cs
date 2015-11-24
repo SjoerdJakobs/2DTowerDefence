@@ -37,7 +37,24 @@ public class PlacementMouse : MonoBehaviour {
     [SerializeField]
     private bool spawnTurret = false;
     //Bool
+    //GameObjects
+    private GameObject _TurretPlacement;
+    private GameObject _WallPlacement;
+    private GameObject _StartBuilding;
+    //GameObjects
 
+
+    void Start()
+    {
+        _StartBuilding = GameObject.Find("BuildButton");
+        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeBuild);
+        _StartBuilding = GameObject.Find("WallButton");
+        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeWall);
+        _StartBuilding = GameObject.Find("TowerButton");
+        _StartBuilding.GetComponent<Button>().onClick.AddListener(ChangeTower);
+    }
+
+<<<<<<< HEAD
 
     private CoinsController checkCoins;
 	
@@ -47,23 +64,56 @@ public class PlacementMouse : MonoBehaviour {
       //  dropDownMenu.GetComponent<Dropdown>().options = 1;
     }
 
+=======
+>>>>>>> e1a04b0ce83aa769f64919da7d54be7613022276
     void Update()
     {
         CheckMouse();
         PlaceInput();
 
         gridPos = new Vector2(Mathf.Round(mousePosition.x / grid) * grid, Mathf.Round(mousePosition.y / grid) * grid);
+        /*if (GUI.Button(Rect,"BuildButton"))
+        {
+
+        }*/
     }
 
-    void CanIBuild()
+    void ChangeTower()
     {
-       if (checkCoins._coinsValue > 0)
-       {
-           building = true;
-       }
+        if (spawnTurret)
+        {
+            spawnTurret = false;
+        }
+        else
+        {
+            spawnTurret = true;
+            spawnWall = false;
+        }
+            
     }
-
-
+    void ChangeWall()
+    {
+        if (spawnWall)
+        {
+            spawnWall = false;
+        }
+        else
+        {
+            spawnTurret = false;
+            spawnWall = true;
+        }
+    }
+    void ChangeBuild()
+    {
+        spawnTurret = false;
+        spawnWall = false;
+        if (building)
+        {
+            building = false;
+        }
+        else
+            building = true;
+    }
     void CheckMouse()
     {
         mousePosition = Input.mousePosition;
@@ -75,7 +125,6 @@ public class PlacementMouse : MonoBehaviour {
         else transform.position = new Vector2(-10000, 0);
     }
 
-
     void PlaceInput()
     {
         if (building)
@@ -86,17 +135,9 @@ public class PlacementMouse : MonoBehaviour {
                 if (Input.GetButtonDown("Fire1"))
                 {
                     if (spawnWall)
-                    {
                         Instantiate(tower1, gridPos, Quaternion.identity);
-                        checkCoins._coinsValue -= 500f;
-                    }
-                       
                     else if (spawnTurret)
-                    {
                         Instantiate(turret, gridPos, Quaternion.identity);
-                        checkCoins._coinsValue -= 500f;
-                    }
-                        
                 }
             }
         }

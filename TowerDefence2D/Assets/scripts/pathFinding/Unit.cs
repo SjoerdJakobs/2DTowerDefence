@@ -4,20 +4,20 @@ using System.Collections;
 public class Unit : MonoBehaviour {
 
     [SerializeField]
-    private Transform target;
+    private Transform _target;
     [SerializeField]
 	private float speed = 5;
     //private bool reset = false;
 	Vector3[] path;
-	private int targetIndex;
+	private int _targetIndex;
 
     public event System.Action noPath;
     
-    private bool reset = false;
+    //private bool reset = false;
 
     void Start()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        PathRequestManager.RequestPath(transform.position, _target.position, OnPathFound);
         //StartCoroutine("DynamicPath"); //maybe for dynamic
     }
 
@@ -75,14 +75,14 @@ public class Unit : MonoBehaviour {
             if (transform.position == currentWaypoint) {
                 //StopCoroutine("DynamicPath");
                 //StartCoroutine("DynamicPath");
-				targetIndex ++;
-                if (targetIndex >= path.Length /*&& !reset*/)
+				_targetIndex ++;
+                if (_targetIndex >= path.Length /*&& !reset*/)
                 {
-                    targetIndex = 0;
+                    _targetIndex = 0;
                     path = new Vector3[0];
                     //yield break;
                 }
-                currentWaypoint = path[targetIndex];
+                currentWaypoint = path[_targetIndex];
 			}
 			transform.position = Vector3.MoveTowards(transform.position,currentWaypoint,speed * Time.deltaTime);
 			yield return null;
@@ -93,11 +93,11 @@ public class Unit : MonoBehaviour {
 
 	public void OnDrawGizmos() {
 		if (path != null) {
-			for (int i = targetIndex; i < path.Length; i ++) {
+			for (int i = _targetIndex; i < path.Length; i ++) {
 				Gizmos.color = Color.black;
 				Gizmos.DrawCube(path[i], Vector3.one);
 
-				if (i == targetIndex) {
+				if (i == _targetIndex) {
 					Gizmos.DrawLine(transform.position, path[i]);
 				}
 				else {
